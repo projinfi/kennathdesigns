@@ -9213,3 +9213,8 @@ p.sticky-label {
   align-items: center;
 margin-top: 56px;
 }
+@media screen and (max-width:500px) and (min-width:0px) {
+  .container .hero-content .kenntxt{
+    font-size: 36px;
+  }
+}
