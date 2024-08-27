@@ -103,5 +103,159 @@ All the SCSS File in SCSS Folder of Assets Folder. You can read the doc file als
  // footer - Section 
  @import 'footer';n facts */
 
+.dowb{
+    margin-bottom: 22px;
+}
+.int-section-wrapper{
+    background-color: rgb(241 251 251);
+    display: flex;
+    flex-direction: row;
+    /* height: 700px; */
+   padding: 28px;
+   margin-bottom: 30px;
+}
+.int-section-2-wrapper{
+  
+    display: flex;
+    flex-direction: column;
+    /* background-color: aqua; */
+    width: 100%;
+    margin-top: 22px;
+    /* height: 700px; */
+    justify-content: flex-start;
+    gap: 22px;
+    margin-top: 42px;
 
 
+}
+.int-section-left{
+    /* background-color: rgb(177, 224, 224); */
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    padding: 0px 10px;
+}
+.int-section-2-left{
+    /* background-color: rgb(177, 224, 224); */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+  gap: 28px;
+   
+   
+}
+
+.int-sec2{
+    max-width: 250px;
+}
+.int-section-2-right{
+    /* background-color: rgb(253, 255, 159); */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 28px;
+  
+   
+}
+
+.int-section-right{
+    /* background-color: rgb(253, 255, 159); */
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    padding: 0px 10px;
+}
+.int-section-title{
+    font-size: 24px;
+    font-weight: 600;
+}
+.int-section-box{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.int-section-list >ul >li {
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+.button-spacer{
+    display: flex;
+    gap: 12px;
+}
+
+.int-section-3,.int-section-2,.int-section-1,.int-section-4{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 10px 20px 0px 0px;
+}
+
+.kdc{
+    margin-top: 32px;
+    margin-bottom: 32px;
+    font-size: 38px;
+    color: #e92c2c;
+}
+
+@media screen and (max-width:770px) and (min-width:0px) {
+    .int-section-wrapper{ 
+        flex-direction: column;
+        gap: 28px;
+        padding: 10px 0px 10px 0px;
+        margin-bottom: 30px;
+    }
+    .int-section-2-wrapper{ 
+        flex-direction: column;
+        gap: 28px;
+        padding: 0px 0px 10px 0px;
+        margin-bottom: 0px;
+    }
+    .int-section-left{
+     
+        width: 100%;
+        
+    }
+    .int-section-right{
+     
+        width: 100%;
+      
+    }
+    .int-section-3,.int-section-2,.int-section-1,.int-section-4{
+     
+        gap: 28px;
+        padding: 0px;
+    }
+   
+    .int-pr{
+        margin-top: 23px;
+    }
+    .int-section-2-left{
+        display: flex;
+        flex-direction: column;
+    }
+    .kdc{
+        margin-top: 32px;
+        margin-bottom: 32px;
+        font-size: 32px;
+        color: #e92c2c;
+    }
+}
+
+@media screen and (max-width:1000px) and (min-width:0px) {
+     .button-spacer{
+        display: flex;
+        flex-direction: column;
+        gap: 0px;
+    }
+    .dowb{
+        margin-bottom: 0px;
+    }
+}
