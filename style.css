@@ -247,6 +247,9 @@ All the SCSS File in SCSS Folder of Assets Folder. You can read the doc file als
         font-size: 32px;
         color: #e92c2c;
     }
+    .int-sec2 {
+        max-width: 350px;
+    }
 }
 
 @media screen and (max-width:1000px) and (min-width:0px) {
