@@ -1203,14 +1203,17 @@ input.main-search-input::placeholder {
 .header-1 {
   position: relative;
   z-index: 9;
+
 }
 .header-1 .mega-menu-wrapper .header-main .header-left {
   display: flex;
   align-items: center;
   gap: 90px;
+  
 }
 .header-1 .mega-menu-wrapper .header-main .header-right {
   gap: 40px;
+  
 }
 @media (max-width: 1399px) {
   .header-1 .mega-menu-wrapper .header-main .header-right {
@@ -1238,6 +1241,7 @@ input.main-search-input::placeholder {
   visibility: hidden;
   width: 340px;
   z-index: 9999;
+
 }
 @media (max-width: 1399px) {
   .header-1 .mega-menu-wrapper .header-main .header-right .menu-cart .cart-box {
@@ -9221,4 +9225,12 @@ margin-top: 56px;
   
     font-size: 14px;
   }
+}
+.c1 .c2 ul li a {
+color: white;
+}
+
+/* Styles when the header-1 sticky class is applied */
+.h1.sticky .c2 ul li a {
+  color: black;
 }
