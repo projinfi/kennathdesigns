@@ -9234,6 +9234,9 @@ color: white;
 .h1.sticky .c2 ul li a {
   color: black;
 }
+.what-we-off{
+  text-align: center;
+}
 @media screen and (max-width:500px) and (min-width:0px) {
   .section-padding .container .prj-comp{
 display: none;
