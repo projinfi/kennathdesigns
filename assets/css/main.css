@@ -9234,3 +9234,15 @@ color: white;
 .h1.sticky .c2 ul li a {
   color: black;
 }
+@media screen and (max-width:500px) and (min-width:0px) {
+  .section-padding .container .prj-comp{
+display: none;
+  }
+  .section-padding {
+    padding: 40px 0;
+}
+.field1x{
+  display: flex;
+  flex-direction: column;
+}
+}
