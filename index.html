@@ -162,10 +162,10 @@
 
         <!-- Header Area Start -->
         <header>
-            <div id="header-sticky" class="header-1">
+            <div id="header-sticky" class="header-1 h1">
                 <div class="container">
                     <div class="mega-menu-wrapper">
-                        <div class="header-main">
+                        <div class="header-main c1">
                             <div class="header-left">
                                 <div class="logo">
                                     <a href="index.html" class="header-logo-2">
@@ -175,11 +175,11 @@
                               
                             </div>
                             <div class="mean__menu-wrapper">
-                                <div class="main-menu">
+                                <div class="main-menu c2">
                                     <nav id="mobile-menu">
                                         <ul>
                                             <li class="has-dropdown active menu-thumb">
-                                                <a href="index.html">
+                                                <a  href="index.html">
                                                 Home 
                                            
                                                 </a>
@@ -258,9 +258,31 @@
         </div>
 
         <div class="ScrollSmoother-content">
+
+
             <!-- Hero Section Start -->
-        <section class="hero-section hero-1">
-            <div class="star-image">
+            <swiper-container  autoplay="{'delay': 3000}" 
+            speed="800" 
+            loop>
+                <swiper-slide>
+                    <img class="sider-imgs" src="assets/img/slide1.png"/>
+                    <img class="sider-mob-imgs" src="assets/img/slidemob1.png"/>
+                </swiper-slide>
+                <swiper-slide>
+                    <img class="sider-imgs" src="assets/img/slide2.png"/>
+                    <img class="sider-mob-imgs" src="assets/img/slidemob2.png"/>
+                </swiper-slide>
+                <swiper-slide>
+                    <img class="sider-imgs" src="assets/img/slide3.png"/>
+                    <img class="sider-mob-imgs" src="assets/img/slidemob3.png"/>
+                </swiper-slide>
+           
+              </swiper-container>
+            
+        <!-- <section class="hero-section hero-1"> -->
+
+
+            <!-- <div class="star-image">
                 <img src="assets/img/hero/star.png" alt="shape-img">
             </div>
             <div class="hero-image-2 wow fadeInUp" data-wow-delay=".4s">
@@ -292,7 +314,10 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
+
+     
+            
         </section>
 
         <section class="pricing-section fix section-padding">
@@ -361,7 +386,7 @@
                     <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".9s">
                         <div class="pricing-box-items">
                             <div class="pricing-image">
-                                <img src="assets/img/pricing/img4.png" alt="pricing-img">
+                                <img src="assets/img/pricing/img5.png" alt="pricing-img">
                             </div>
                             <div class="pricing-content">
                                 <h3 class="splt-txt wow" data-splitting>SPACE PRO</h3>
@@ -1227,27 +1252,27 @@
                                 </div>
                                 <ul class="list-items">
                                     <li>
-                                        <a href="service-details.html">
+                                        <a href="kitchen.html">
                                             Kitchen
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="service-details.html">
+                                        <a href="Bedroom.html">
                                          Bedroom
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="service-details.html">
+                                        <a href="LivingRoom.html">
                                             Living Room
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="service-details.html">
+                                        <a href="DiningRoom.html">
                                             Dining Room
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="service-details.html">
+                                        <a href="Bathroom.html">
                                           Bathroom
                                         </a>
                                     </li>
@@ -1355,5 +1380,6 @@
         <script src="assets/js/gsap/ScrollSmoother.min.js"></script>
         <!--<< Main.js >>-->
         <script src="assets/js/main.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
     </body>
 </html>

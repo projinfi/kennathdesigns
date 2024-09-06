@@ -314,3 +314,20 @@ All the SCSS File in SCSS Folder of Assets Folder. You can read the doc file als
 .portfolio-wrapp:hover .portfolio-immg {
     transform: scale(1.1);
 }
+.sider-imgs{
+    width: 100%;
+    height: auto;
+}
+.sider-mob-imgs{
+    display: none;
+    width: 100%;
+    height: auto;
+}
+@media screen and (max-width:600px) and (min-width:0px) {
+    .sider-mob-imgs{
+        display: block;
+    }
+    .sider-imgs{
+        display: none;
+    }
+}
