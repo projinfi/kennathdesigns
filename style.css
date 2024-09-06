@@ -309,6 +309,7 @@ All the SCSS File in SCSS Folder of Assets Folder. You can read the doc file als
 .portfolio-wrapp:hover .portfolio-det-sec {
     opacity: 1;
     transform: translateY(0);
+    
 }
 
 .portfolio-wrapp:hover .portfolio-immg {
@@ -330,4 +331,19 @@ All the SCSS File in SCSS Folder of Assets Folder. You can read the doc file als
     .sider-imgs{
         display: none;
     }
+}
+.portfolio-de-se{
+    padding: 12px;
+    text-align: center;
+    background-color: #dd3636;
+}
+.portfolio-de-client-name{
+    font-weight: 500;
+    font-size: 24px;
+}
+.portfolio-de-se{
+    position: absolute;
+    bottom: 0;
+    width: 80%;
+    color: white;
 }
