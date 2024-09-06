@@ -335,7 +335,7 @@ All the SCSS File in SCSS Folder of Assets Folder. You can read the doc file als
 .portfolio-de-se{
     padding: 12px;
     text-align: center;
-    background-color: #dd3636;
+    background-color: var(--theme);
 }
 .portfolio-de-client-name{
     font-weight: 500;
