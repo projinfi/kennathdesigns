@@ -347,3 +347,78 @@ All the SCSS File in SCSS Folder of Assets Folder. You can read the doc file als
     width: 80%;
     color: white;
 }
+.products-cont-contents{
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+.products-cont-contents .products-cont-right{
+   order: 1;
+}
+.products-cont-contents .products-cont-left{
+    order: 2;
+ }
+ .products-cont-contents:nth-child(even){
+   flex-direction: row-reverse;
+   
+ }
+ .products-cont-contents:nth-child(even).products-cont-right{
+    order: 2;
+  }
+  .products-cont-contents:nth-child(even).products-cont-left{
+    order: 1;
+
+  }
+ 
+
+
+.products-cont-right{
+    width: 100%;
+    height: auto;
+    background-color: rgb(180, 211, 239);
+    margin-right: 40px;
+}
+.products-cont-left{
+    padding: 0px 40px 0px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 22px;
+}
+.product-cont-title{
+    font-size: 32px;
+    font-weight: 600;
+}
+.product-cont-description{
+    font-size: 16px;
+}
+.talk-to-experts{
+    margin-top: 12px;
+}
+.product-details-container{
+    display: flex;
+    flex-direction: column;
+    gap: 42px;
+}
+.product-cont-img{
+    width: 100%;
+    height: auto;
+}
+.read-more-link{
+    color: #e92c2c;
+}
+
+@media screen and (max-width:992px) and (min-width:0px) {
+    .products-cont-contents{
+        flex-direction: column;
+        gap: 22px;
+    }
+    .products-cont-left {
+        padding: 0px;
+        
+    }
+    .products-cont-contents:nth-child(even){
+        flex-direction: column;
+      }
+}
