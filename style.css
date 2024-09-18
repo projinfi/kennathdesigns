@@ -376,7 +376,7 @@ All the SCSS File in SCSS Folder of Assets Folder. You can read the doc file als
 .products-cont-right{
     width: 100%;
     height: auto;
-    background-color: rgb(180, 211, 239);
+ 
     margin-right: 40px;
 }
 .products-cont-left{
@@ -408,6 +408,44 @@ All the SCSS File in SCSS Folder of Assets Folder. You can read the doc file als
 .read-more-link{
     color: #e92c2c;
 }
+.bendo-grid-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* Creates 6 equal columns */
+    grid-template-rows: repeat(2, 200px); /* Creates 3 equal rows */
+    gap: 10px;
+}
+
+.bendo-grid {
+    position: relative;
+    overflow: hidden;
+}
+
+.bendo-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Large item */
+.bendo-grid.large {
+    grid-column: span 3; /* Takes up 3 columns */
+    grid-row: span 2; /* Takes up 2 rows */
+}
+
+/* Medium item */
+.bendo-grid.medium {
+    grid-column: span 2; /* Takes up 2 columns */
+    grid-row: span 1; /* Takes up 1 row */
+}
+
+/* Small items */
+.bendo-grid.small {
+    grid-column: span 1; /* Takes up 1 column */
+    grid-row: span 1; /* Takes up 1 row */
+}
+.more-det-content{
+    margin-top: 32px;
+}
 
 @media screen and (max-width:992px) and (min-width:0px) {
     .products-cont-contents{
@@ -421,4 +459,16 @@ All the SCSS File in SCSS Folder of Assets Folder. You can read the doc file als
     .products-cont-contents:nth-child(even){
         flex-direction: column;
       }
+}
+@media  screen and (max-width:500px) and (min-width:0px) {
+    .bendo-grid-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* Creates 6 equal columns */
+        grid-template-rows: repeat(2, 100px); /* Creates 3 equal rows */
+        gap: 10px;
+    }
+    .imgg{
+        display: none;
+    }
+ 
 }
