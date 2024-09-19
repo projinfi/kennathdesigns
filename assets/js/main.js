@@ -32,16 +32,39 @@
             $(".body-overlay").removeClass("opened");
         });
 
-        //>> Sticky Header Js Start <<//
 
+        //>> Sticky Header Js Start <<//
+        const light = document.querySelectorAll(".white-logo");
+        const dark = document.querySelectorAll(".dark-logo");
+        
         $(window).scroll(function() {
             if ($(this).scrollTop() > 250) {
                 $("#header-sticky").addClass("sticky");
+         // Show dark logo and hide light logo when scrolling up
+         light.forEach((element) => {
+            element.style.display = "none";
+        });
+
+        dark.forEach((element) => {
+            element.style.display = "block";
+        });
+             
+                
             } else {
                 $("#header-sticky").removeClass("sticky");
+        
+                   // Show light logo and hide dark logo when scrolling down
+                   light.forEach((element) => {
+                    element.style.display = "block";
+                });
+        
+                dark.forEach((element) => {
+                    element.style.display = "none";
+                });
             }
         });
-  
+        
+
         //>> Video Popup Start <<//
         $(".img-popup").magnificPopup({
             type: "image",

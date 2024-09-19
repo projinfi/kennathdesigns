@@ -482,7 +482,22 @@ All the SCSS File in SCSS Folder of Assets Folder. You can read the doc file als
     width: 100%;
     height: 100%;
 }
-
+.service-ico{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.ser-ico{
+    width: 50px;
+    height: 50px;
+}
+.light-logo{
+    display: flex;
+}
+.dark-logo{
+    display: none;
+}
 @media screen and (max-width:992px) and (min-width:0px) {
     .products-cont-contents{
         flex-direction: column;
