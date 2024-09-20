@@ -8868,10 +8868,10 @@ p.sticky-label {
 }
 
 .contact-wrapper-3 {
-  background-image: url(../../assets/img/contact.jpg);
+  /* background-image: url(../../assets/img/contact.jpg); */
+
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 0 0 80px 0;
   border-radius: 5px;
 }
 .contact-wrapper-3 .contact-content {
