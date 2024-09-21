@@ -40,29 +40,65 @@
         $(window).scroll(function() {
             if ($(this).scrollTop() > 250) {
                 $("#header-sticky").addClass("sticky");
-         // Show dark logo and hide light logo when scrolling up
-         light.forEach((element) => {
-            element.style.display = "none";
-        });
-
-        dark.forEach((element) => {
-            element.style.display = "block";
-        });
-             
+        
+                // Show dark logo (replace light logo) when scrolling up
+                dark.forEach((element) => {
+                    element.style.display = "block";
+                });
                 
+                // Hide light logo for width > 1200
+                if (window.innerWidth > 1200) {
+                    light.forEach((element) => {
+                        element.style.display = "none";
+                    });
+                }
+        
             } else {
                 $("#header-sticky").removeClass("sticky");
         
-                   // Show light logo and hide dark logo when scrolling down
-                   light.forEach((element) => {
+                // Show light logo and hide dark logo when scrolling down for width > 1200
+                if (window.innerWidth > 1200) {
+                    light.forEach((element) => {
+                        element.style.display = "block";
+                    });
+                    dark.forEach((element) => {
+                        element.style.display = "none";
+                    });
+                } else {
+                    // For width <= 1200, always show the dark logo
+                    dark.forEach((element) => {
+                        element.style.display = "block";
+                    });
+                    light.forEach((element) => {
+                        element.style.display = "none";
+                    });
+                }
+            }
+        });
+        
+        // Run this on page load as well to hide the white logo and display the black logo if the width is below 1200px
+        function updateLogoDisplay() {
+            if (window.innerWidth <= 1200) {
+                dark.forEach((element) => {
                     element.style.display = "block";
                 });
-        
+                light.forEach((element) => {
+                    element.style.display = "none";
+                });
+            } else {
+                light.forEach((element) => {
+                    element.style.display = "block";
+                });
                 dark.forEach((element) => {
                     element.style.display = "none";
                 });
             }
-        });
+        }
+        
+        // Call on page load and on window resize
+        $(document).ready(updateLogoDisplay);
+        $(window).resize(updateLogoDisplay);
+        
         
 
         //>> Video Popup Start <<//
