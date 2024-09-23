@@ -242,7 +242,28 @@
                 </div>
             </div>
         </header>
-
+        <div class="kenneth-modal">
+            <div class="kenneth-modal-content">
+                <div class="kenneth-modal-close">X</div>
+                <div class="kenneth-modal-header">
+                    <div class="kenneth-modal-title">GET FREE ESTIMATE</div>
+                </div>
+                <div class="kenneth-description">Please fill out the enquiry below and we will get back to you as soon as possible</div>
+                <div class="kenneth-input">
+                    <input type="text" onchange="validateKennethForm()" class="kenneth-name-input kenneth-name" placeholder="Name"/>
+                </div>
+                <div class="kenneth-input">
+                    <input type="text" onchange="validateKennethForm()" class="kenneth-name-input kenneth-phone" placeholder="Phone"/>
+                </div>
+                <div class="kenneth-input">
+                    <input type="email" onchange="validateKennethForm()" class="kenneth-name-input kenneth-email" placeholder="Email"/>
+                </div>
+                <div class="kenneth-input">
+                    <input type="text" onchange="validateKennethForm()" class="kenneth-name-input kenneth-location" placeholder="Location"/>
+                </div>
+                <div class="kenneth-submit-btn kenneth-btn-disable">Submit</div>
+            </div>
+        </div>  
         <!-- Search Area Start -->
         <div class="search-wrap">
             <div class="search-inner">
@@ -257,9 +278,12 @@
             </div>
         </div>
 
+       
+       
+   
+
         <div class="ScrollSmoother-content">
-
-
+        
             <!-- Hero Section Start -->
             <swiper-container  autoplay="{'delay': 3000}" 
             speed="800" 
@@ -321,6 +345,7 @@
         </section>
 
         <section class="pricing-section fix section-padding">
+            <div class="kenneth-btn">CLICK</div>
             <div class="container">
                 <div class="section-title text-center">
                     <h6 class="wow fadeInUp">Our Tailored Interior Design Packages</h6>
@@ -1392,5 +1417,59 @@
         <!--<< Main.js >>-->
         <script src="assets/js/main.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+
+        <script>
+            const kennethBtn = document.querySelector(".kenneth-submit-btn"); // Fixed class name
+            const kennethModal = document.querySelector(".kenneth-modal");
+            const kennethClose = document.querySelector(".kenneth-modal-close");
+
+            // Get the input fields
+            const kennethNameInput = document.querySelector(".kenneth-name-input.kenneth-name");
+            const kennethPhoneInput = document.querySelector(".kenneth-phone");
+            const kennethEmailInput = document.querySelector(".kenneth-email");
+            const kennethLocationInput = document.querySelector(".kenneth-location");
+
+            const checkEmail = (email) => {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return emailRegex.test(email);
+            };
+
+            const checkPhone = (phone) => {
+                const phoneRegex = /^\d+$/;
+                return phone.length >= 10 && phoneRegex.test(phone);
+            };
+
+            const validateKennethForm = () => {
+                const kennethName = kennethNameInput.value;
+                const kennethPhone = kennethPhoneInput.value;
+                const kennethEmail = kennethEmailInput.value;
+                const kennethLocation = kennethLocationInput.value;
+                
+
+                if (kennethName && checkPhone(kennethPhone) && checkEmail(kennethEmail) && kennethLocation) {
+                    kennethBtn.classList.remove("kenneth-btn-disable");
+                } else {
+                    kennethBtn.classList.add("kenneth-btn-disable");
+                }
+            };
+
+            // Validate the form on input changes
+            kennethNameInput.addEventListener("input", validateKennethForm);
+            kennethPhoneInput.addEventListener("input", validateKennethForm);
+            kennethEmailInput.addEventListener("input", validateKennethForm);
+            kennethLocationInput.addEventListener("input", validateKennethForm);
+
+            kennethBtn.addEventListener("click", () => {
+                kennethModal.style.display = "flex";
+                document.body.classList.add("noscroll");
+            });
+
+            kennethClose.addEventListener("click", () => {
+                kennethModal.style.display = "none";
+                document.body.classList.remove("noscroll");
+            });
+
+        </script>
+
     </body>
 </html>

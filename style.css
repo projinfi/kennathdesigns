@@ -523,3 +523,82 @@ All the SCSS File in SCSS Folder of Assets Folder. You can read the doc file als
     }
  
 }
+.kenneth-modal{
+    z-index: 200;
+    background-color: rgba(0, 0, 0,0.3);
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+.kenneth-modal-content{
+    background-color: #ffffff;
+    margin:80px 10px 0px;
+    width: 100%;
+    max-width: 600px;
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: relative;
+}
+.kenneth-modal-close{
+    font-size: 24px;
+    display: flex;
+    position: absolute;
+    justify-content: flex-end;
+    padding: 14px;
+    cursor: pointer;
+    top: 0;
+   right: 0;
+}
+.kenneth-modal{
+    display: flex;
+}
+.noscroll {
+    overflow: hidden;
+}
+.kenneth-modal-header{
+    display: flex;
+    
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid gray;
+    padding: 0px 0px 12px;
+
+}
+.kenneth-modal-title{
+    font-size: 22px;
+    font-weight: 500;
+}
+.kenneth-input{
+    background-color: #F8F8F8;
+    width: 100%;
+    color: black;
+}
+.kenneth-name-input{
+    width: 100%;
+    padding: 6px 12px;
+    color: black;
+}
+.kenneth-name-input:focus{
+    width: 100%;
+    padding: 6px 12px;
+    color: black;
+}
+.kenneth-submit-btn{
+    background-color: #ED1C24;
+    padding: 6px 12px;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+    margin-top: 12px;
+}
+.kenneth-btn-disable {
+    opacity: 0.4;
+    pointer-events: none; /* Prevent clicks when disabled */
+}
