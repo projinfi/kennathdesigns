@@ -299,31 +299,31 @@
                                         <div class="row g-4">
                                             <div class="col-lg-6 wow fadeInUp">
                                                 <div class="form-clt">
-                                                    <input type="text" name="name" id="name" placeholder="Your Name">
+                                                    <input type="text" name="name" id="name" placeholder="Your Name" class="kenneth-name-input kenneth-name">
                                                 </div>
                                             </div>
                                             <div class="col-lg-6 wow fadeInUp">
                                                 <div class="form-clt">
-                                                    <input type="text" name="email" id="email" placeholder="Your Email">
+                                                    <input type="text" onchange="validateKennethForm()" name="email" id="email" placeholder="Your Email" class="kenneth-name-input kenneth-email">
                                                 </div>
                                             </div>
                                             <div class="col-lg-6 wow fadeInUp">
                                                 <div class="form-clt">
-                                                    <input type="text" name="number" id="number" placeholder="Phone Number">
+                                                    <input type="text" onchange="validateKennethForm()" name="phone" id="number" placeholder="Phone Number"  class="kenneth-name-input kenneth-phone">
                                                 </div>
                                             </div>
                                             <div class="col-lg-6 wow fadeInUp">
                                                 <div class="form-clt">
-                                                    <input type="text" name="subject" id="subject" placeholder="Subject">
+                                                    <input type="text" onchange="validateKennethForm()" name="location" id="location" placeholder="Location" class="kenneth-name-input kenneth-location">
                                                 </div>
                                             </div>
                                             <div class="col-lg-12 wow fadeInUp">
                                                 <div class="form-clt">
-                                                    <textarea name="message" id="message" placeholder="Message here.."></textarea>
+                                                    <textarea name="message" onchange="validateKennethForm()" id="message" class="kenneth-name-input kenneth-message" placeholder="Message here.."></textarea>
                                                 </div>
                                             </div>
                                             <div class="col-lg-7 wow fadeInUp">
-                                                <button type="submit" class="theme-btn padding-style">
+                                                <button type="submit" class="theme-btn padding-style kenneth-submit-btn kenneth-btn-disable">
                                                     submit now <i class="fas fa-long-arrow-right"></i>
                                                 </button>
                                             </div>
@@ -640,6 +640,7 @@ const kennethNameInputs = document.querySelectorAll(".kenneth-name-input.kenneth
 const kennethPhoneInputs = document.querySelectorAll(".kenneth-phone");
 const kennethEmailInputs = document.querySelectorAll(".kenneth-email");
 const kennethLocationInputs = document.querySelectorAll(".kenneth-location");
+const kennethMessageInputs = document.querySelectorAll(".kenneth-message")
 
 // Email validation function
 const checkEmail = (email) => {
@@ -659,8 +660,9 @@ const validateKennethForm = (formIndex) => {
     const kennethPhone = kennethPhoneInputs[formIndex].value;
     const kennethEmail = kennethEmailInputs[formIndex].value;
     const kennethLocation = kennethLocationInputs[formIndex].value;
+    const kennethMessage = kennethMessageInputs[formIndex].value;
 
-    if (kennethName && checkPhone(kennethPhone) && checkEmail(kennethEmail) && kennethLocation) {
+    if (kennethName && checkPhone(kennethPhone) && checkEmail(kennethEmail) && kennethLocation && kennethMessage != "") {
         kennethBtns[formIndex].classList.remove("kenneth-btn-disable");
     } else {
         kennethBtns[formIndex].classList.add("kenneth-btn-disable");
@@ -674,6 +676,7 @@ openKennethModals.forEach((btn, index) => {
         kennethPhoneInputs[index].value = "";
         kennethEmailInputs[index].value = "";
         kennethLocationInputs[index].value = "";
+        kennethMessageInputs[index].value = "";
         kennethModals[index].style.display = "flex";
         document.body.classList.add("noscroll");
     });
@@ -686,6 +689,8 @@ kennethCloseBtns.forEach((btn, index) => {
         kennethPhoneInputs[index].value = "";
         kennethEmailInputs[index].value = "";
         kennethLocationInputs[index].value = "";
+        kennethMessageInputs[index].value = "";
+        kennethMessageInputs[index].value = "";
         kennethModals[index].style.display = "none";
         document.body.classList.remove("noscroll");
     });
@@ -708,6 +713,10 @@ kennethLocationInputs.forEach((input, index) => {
     input.addEventListener("input", () => validateKennethForm(index));
 });
 
+kennethMessageInputs.forEach((input, index) => {
+    input.addEventListener("input", () => validateKennethForm(index));
+});
+
 // Add event listeners to submit buttons for form submission
 kennethBtns.forEach((btn, index) => {
     btn.addEventListener("click", async () => {
@@ -723,11 +732,12 @@ kennethBtns.forEach((btn, index) => {
                 name: kennethNameInputs[index].value,
                 phone: kennethPhoneInputs[index].value,
                 email: kennethEmailInputs[index].value,
-                location: kennethLocationInputs[index].value
+                location: kennethLocationInputs[index].value,
+                message: "jkj"
             };
 
             // Send data via EmailJS (or other service)
-            emailjs.send('service_jnh305x', 'template_x2dak1r', templateParams).then(
+            emailjs.send('service_jnh305x', 'template_v06y4de', templateParams).then(
                 (response) => {
                     console.log('SUCCESS!', response.status, response.text);
                 },
@@ -736,10 +746,11 @@ kennethBtns.forEach((btn, index) => {
                 },
             );
 
-            kennethNameInputs[index].value = "";
+        kennethNameInputs[index].value = "";
         kennethPhoneInputs[index].value = "";
         kennethEmailInputs[index].value = "";
         kennethLocationInputs[index].value = "";
+        kennethMessageInputs[index].value = "";
 
         } catch (err) {
             console.log("Can't submit form", err);
