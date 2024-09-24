@@ -1420,6 +1420,17 @@
         <script src="assets/js/main.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
 
+
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+        </script>
+        <script type="text/javascript">
+            (function () {
+                emailjs.init({
+                    publicKey: "Axugl_PnTQrR5OXVo",
+                });
+            })();
+        </script>
+
         <script>
             const kennethBtn = document.querySelector(".kenneth-submit-btn"); // Fixed class name
             const kennethModal = document.querySelector(".kenneth-modal");
@@ -1463,19 +1474,51 @@
             kennethLocationInput.addEventListener("input", validateKennethForm);
             
             openKennethModal.addEventListener("click",()=>{
+                kennethNameInput.value = "";
+                kennethEmailInput.value = "";
+                kennethLocationInput.value = "";
+                kennethPhoneInput.value = "";
                 kennethModal.style.display = "flex";
                 document.body.classList.add("noscroll");
             })
 
-            kennethBtn.addEventListener("click", () => {
-                kennethModal.style.display = "flex";
-                document.body.classList.add("noscroll");
+            kennethBtn.addEventListener("click", async () => {
+                kennethModal.style.display = "none";
+                document.body.classList.remove("noscroll");
+                try{
+
+                    var templateParams = {
+                 name: kennethNameInput.value,
+                 phone : kennethPhoneInput.value,
+                 email: kennethEmailInput.value,
+                 location : kennethLocationInput.value
+
+                   };
+
+              emailjs.send('service_jnh305x', 'template_x2dak1r', templateParams).then(
+             (response) => {
+             console.log('SUCCESS!', response.status, response.text);
+             },
+            (error) => {
+            console.log('FAILED...', error);
+            },
+            );
+
+                }catch(err){
+                    console.log("cant submit form",err)
+                }
             });
 
             kennethClose.addEventListener("click", () => {
+                kennethNameInput.value = "";
+                kennethEmailInput.value = "";
+                kennethLocationInput.value = "";
+                kennethPhoneInput.value = "";
                 kennethModal.style.display = "none";
                 document.body.classList.remove("noscroll");
             });
+
+          
 
         </script>
 
