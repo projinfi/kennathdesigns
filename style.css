@@ -557,7 +557,7 @@ All the SCSS File in SCSS Folder of Assets Folder. You can read the doc file als
    right: 0;
 }
 .kenneth-modal{
-    display: flex;
+    display: none;
 }
 .noscroll {
     overflow: hidden;
@@ -573,7 +573,7 @@ All the SCSS File in SCSS Folder of Assets Folder. You can read the doc file als
 }
 .kenneth-modal-title{
     font-size: 22px;
-    font-weight: 500;
+    font-weight: 600;
 }
 .kenneth-input{
     background-color: #F8F8F8;

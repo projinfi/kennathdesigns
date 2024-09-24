@@ -345,7 +345,7 @@
         </section>
 
         <section class="pricing-section fix section-padding">
-            <div class="kenneth-btn">CLICK</div>
+ 
             <div class="container">
                 <div class="section-title text-center">
                     <h6 class="wow fadeInUp">Our Tailored Interior Design Packages</h6>
@@ -894,7 +894,7 @@
                     <div class="col-lg-6">
                         <div class="achievement-content">
                         <div class="section-title">
-                            <h6 class="wow fadeInUp">Our Achievement</h6>
+                            <h6 class="wow fadeInUp ">Our Achievement</h6>
                             <h2 class="splt-txt wow" data-splitting>
                                 Shaping Exceptional Spaces with<br/> Precision and Passion
                             </h2>
@@ -903,12 +903,14 @@
                             We bring your vision to life with bespoke interiors that reflect your unique style. Every space we design is a testament to our commitment to quality, creativity, and attention to detail.
 
                         </p>
-                        <div class="about-button wow fadeInUp" data-wow-delay=".7s">
-                            <a href="about.html" class="theme-btn bg-transparent">
-                                Talk To Our Experts
-                                <i class="fas fa-long-arrow-right"></i>
+                        <div class="about-button wow fadeInUp kenneth-btn" data-wow-delay=".7s">
+                            <a class="theme-btn bg-transparent ">
+                                Talk To Our Experts 
+                                <i class="fas fa-long-arrow-right "></i>
                             </a>
                         </div>
+                      
+                        
                         </div>
                     </div>
                     <div class="col-lg-6 mt-5 mt-lg-0">
@@ -1422,6 +1424,7 @@
             const kennethBtn = document.querySelector(".kenneth-submit-btn"); // Fixed class name
             const kennethModal = document.querySelector(".kenneth-modal");
             const kennethClose = document.querySelector(".kenneth-modal-close");
+            const openKennethModal = document.querySelector(".kenneth-btn")
 
             // Get the input fields
             const kennethNameInput = document.querySelector(".kenneth-name-input.kenneth-name");
@@ -1458,6 +1461,11 @@
             kennethPhoneInput.addEventListener("input", validateKennethForm);
             kennethEmailInput.addEventListener("input", validateKennethForm);
             kennethLocationInput.addEventListener("input", validateKennethForm);
+            
+            openKennethModal.addEventListener("click",()=>{
+                kennethModal.style.display = "flex";
+                document.body.classList.add("noscroll");
+            })
 
             kennethBtn.addEventListener("click", () => {
                 kennethModal.style.display = "flex";
