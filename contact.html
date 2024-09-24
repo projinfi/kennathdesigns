@@ -617,6 +617,136 @@
     <script src="assets/js/ajax-mail.js"></script>
     <!--<< Main.js >>-->
      <script src="assets/js/main.js"></script>
+
+     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init({
+                publicKey: "Axugl_PnTQrR5OXVo",
+            });
+        })();
+    </script>
+
+<script>
+// Get all the submit buttons, modals, and close buttons
+const kennethBtns = document.querySelectorAll(".kenneth-submit-btn"); // For multiple submit buttons
+const openKennethModals = document.querySelectorAll(".kenneth-btn"); // For multiple modal open buttons (if needed)
+const kennethModals = document.querySelectorAll(".kenneth-modal"); // For multiple modals
+const kennethCloseBtns = document.querySelectorAll(".kenneth-modal-close"); // For multiple close buttons
+
+// Get all the input fields using querySelectorAll
+const kennethNameInputs = document.querySelectorAll(".kenneth-name-input.kenneth-name");
+const kennethPhoneInputs = document.querySelectorAll(".kenneth-phone");
+const kennethEmailInputs = document.querySelectorAll(".kenneth-email");
+const kennethLocationInputs = document.querySelectorAll(".kenneth-location");
+
+// Email validation function
+const checkEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+};
+
+// Phone validation function
+const checkPhone = (phone) => {
+    const phoneRegex = /^\d+$/;
+    return phone.length >= 10 && phoneRegex.test(phone);
+};
+
+// Function to validate inputs for each form
+const validateKennethForm = (formIndex) => {
+    const kennethName = kennethNameInputs[formIndex].value;
+    const kennethPhone = kennethPhoneInputs[formIndex].value;
+    const kennethEmail = kennethEmailInputs[formIndex].value;
+    const kennethLocation = kennethLocationInputs[formIndex].value;
+
+    if (kennethName && checkPhone(kennethPhone) && checkEmail(kennethEmail) && kennethLocation) {
+        kennethBtns[formIndex].classList.remove("kenneth-btn-disable");
+    } else {
+        kennethBtns[formIndex].classList.add("kenneth-btn-disable");
+    }
+};
+
+// Open the modal when a button is clicked (if modals are used)
+openKennethModals.forEach((btn, index) => {
+    btn.addEventListener("click", () => {
+        kennethNameInputs[index].value = "";
+        kennethPhoneInputs[index].value = "";
+        kennethEmailInputs[index].value = "";
+        kennethLocationInputs[index].value = "";
+        kennethModals[index].style.display = "flex";
+        document.body.classList.add("noscroll");
+    });
+});
+
+// Close modals when close button is clicked
+kennethCloseBtns.forEach((btn, index) => {
+    btn.addEventListener("click", () => {
+        kennethNameInputs[index].value = "";
+        kennethPhoneInputs[index].value = "";
+        kennethEmailInputs[index].value = "";
+        kennethLocationInputs[index].value = "";
+        kennethModals[index].style.display = "none";
+        document.body.classList.remove("noscroll");
+    });
+});
+
+// Add validation listeners to input fields for real-time validation
+kennethNameInputs.forEach((input, index) => {
+    input.addEventListener("input", () => validateKennethForm(index));
+});
+
+kennethPhoneInputs.forEach((input, index) => {
+    input.addEventListener("input", () => validateKennethForm(index));
+});
+
+kennethEmailInputs.forEach((input, index) => {
+    input.addEventListener("input", () => validateKennethForm(index));
+});
+
+kennethLocationInputs.forEach((input, index) => {
+    input.addEventListener("input", () => validateKennethForm(index));
+});
+
+// Add event listeners to submit buttons for form submission
+kennethBtns.forEach((btn, index) => {
+    btn.addEventListener("click", async () => {
+        // If modal is open, close it after submission
+        if (kennethModals[index]) {
+            kennethModals[index].style.display = "none";
+            document.body.classList.remove("noscroll");
+        }
+
+        // Collect form data
+        try {
+            var templateParams = {
+                name: kennethNameInputs[index].value,
+                phone: kennethPhoneInputs[index].value,
+                email: kennethEmailInputs[index].value,
+                location: kennethLocationInputs[index].value
+            };
+
+            // Send data via EmailJS (or other service)
+            emailjs.send('service_jnh305x', 'template_x2dak1r', templateParams).then(
+                (response) => {
+                    console.log('SUCCESS!', response.status, response.text);
+                },
+                (error) => {
+                    console.log('FAILED...', error);
+                },
+            );
+
+            kennethNameInputs[index].value = "";
+        kennethPhoneInputs[index].value = "";
+        kennethEmailInputs[index].value = "";
+        kennethLocationInputs[index].value = "";
+
+        } catch (err) {
+            console.log("Can't submit form", err);
+        }
+    });
+});
+</script>
     </body>
 </html>
 
