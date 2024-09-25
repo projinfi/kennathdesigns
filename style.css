@@ -290,10 +290,12 @@ All the SCSS File in SCSS Folder of Assets Folder. You can read the doc file als
     color: white;
     font-size: 24px;
     font-weight: 600;
+    text-shadow: 3px 3px 5px black, 3px 3px 10px rgb(99, 99, 99), 5px 5px 10px rgb(99, 99, 99);
 }
 
 .portfolio-client-sector {
     color: rgb(255, 255, 255);
+    text-shadow: 3px 3px 5px black, 3px 3px 10px rgb(99, 99, 99), 5px 5px 10px rgb(99, 99, 99);
 }
 
 .pw {
