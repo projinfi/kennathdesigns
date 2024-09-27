@@ -391,6 +391,7 @@ All the SCSS File in SCSS Folder of Assets Folder. You can read the doc file als
 .product-cont-title{
     font-size: 32px;
     font-weight: 600;
+    line-height: 38px;
 }
 .product-cont-description{
     font-size: 16px;
